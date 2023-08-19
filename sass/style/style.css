@@ -5,7 +5,7 @@
 }
 
 .container {
-  background-color: #999;
+  background-color: #deeeff;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -13,5 +13,72 @@
 }
 .container .quranAppBox {
   background-color: #fff;
+  border-radius: 7px;
+}
+.container .quranAppBox .tabBtnBox {
+  background-color: #02823B;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  position: relative;
+  width: 500px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.container .quranAppBox .tabBtnBox .tab_btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.container .quranAppBox .tabBtnBox .tab_btn.active {
+  transform: scale(1.2);
+}
+.container .quranAppBox .tabBtnBox .line {
+  width: 49px;
+  height: 7px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 57px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.container .quranAppBox .contentBox {
+  padding: 20px 30px;
+}
+.container .quranAppBox .contentBox .content_item {
+  display: none;
+}
+.container .quranAppBox .contentBox .content_item.active {
+  display: block;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.container .quranAppBox .footerBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #02823B;
+  color: white;
+  padding: 10px 20px;
+  font-size: 17px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.container .quranAppBox .footerBox a {
+  color: white;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

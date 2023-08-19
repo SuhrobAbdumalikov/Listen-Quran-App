@@ -1,21 +1,91 @@
-@import '../layout';
-@import '../mixins';
+@import "../layout";
+@import "../mixins";
+@import "../colors";
 // ========================>>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
-    background-color: #999;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container {
+  background-color: $mainBackgroundColor;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .quranAppBox{
-        background-color: #fff;
-        padding: 10px 20px;
+  .quranAppBox {
+    background-color: #fff;
+    border-radius: 7px;
+
+    .tabBtnBox {
+      background-color: $boxTabColor;
+      padding: 10px 20px;
+      @include d-flex();
+      justify-content: space-around;
+      position: relative;
+      width: 500px;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+
+      .tab_btn {
+        background: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 18px;
+        color: white;
+        padding: 5px;
+        transition: all 0.3s ease-in-out;
+        &.active {
+          transform: scale(1.2);
+        }
+      }
+
+      .line {
+        width: 49px;
+        height: 7px;
+        background-color: white;
+        position: absolute;
+        bottom: 0;
+        left: 57px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        transition: all 0.3s ease-in-out;
+      }
     }
+
+    .contentBox {
+      padding: 20px 30px;
+
+      .content_item {
+        display: none;
+        &.active {
+          display: block;
+        }
+
+        .listenQuran {
+          @include d-column();
+          gap: 20px;
+        }
+      }
+    }
+
+    .footerBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $boxTabColor;
+      color: white;
+      padding: 10px 20px;
+      font-size: 17px;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
 }

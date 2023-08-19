@@ -8,7 +8,11 @@ const chooseAyah = document.querySelector("#ayah");
 const nextBtn = document.querySelector("#nextBtn");
 const audio = document.querySelector("audio");
 const oyatText = document.querySelector("#text");
+const allTabs = document.querySelectorAll(".tab_btn");
+const allContents = document.querySelectorAll(".content_item");
+const buttomLine = document.querySelector(".line");
 
+//===========>========> Listen Qur'on Content <<=================//
 (async () => {
   const { data } = await customFetch(`${API_URL}/edition/format/audio`);
   console.log(data);
@@ -53,4 +57,20 @@ chooseDomla.addEventListener("change", (e) => {
       oyatText.textContent = SelectedAyah.text;
     });
   })();
+});
+
+//===============>> Settings Content <<==================//
+
+//================>> Tab Menu Content <<===================//
+allTabs.forEach((tab, idx) => {
+  tab.addEventListener("click", (e) => {
+    allTabs.forEach((tab) => tab.classList.remove("active"));
+    tab.classList.add("active");
+
+    buttomLine.style.width = e.target.offsetWidth + "px";
+    buttomLine.style.left = e.target.offsetLeft + "px";
+
+    allContents.forEach((content) => content.classList.remove("active"));
+    allContents[idx].classList.add("active");
+  });
 });

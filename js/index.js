@@ -6,11 +6,20 @@ const chooseDomla = document.querySelector("#domla");
 const chooseSurah = document.querySelector("#surah");
 const chooseAyah = document.querySelector("#ayah");
 const nextBtn = document.querySelector("#nextBtn");
+const backAyah = document.querySelector("#backAyah");
 const audio = document.querySelector("audio");
 const oyatText = document.querySelector("#text");
 const allTabs = document.querySelectorAll(".tab_btn");
 const allContents = document.querySelectorAll(".content_item");
 const buttomLine = document.querySelector(".line");
+const currentTime = document.querySelector(".currentTime");
+
+//===============>> Main menu <<========================//
+setInterval(() => {
+    const nowTime = new Date()
+    currentTime.textContent = `Current Time: ${nowTime.toLocaleTimeString()}`
+});
+
 
 //===========>========> Listen Qur'on Content <<=================//
 (async () => {
@@ -24,40 +33,62 @@ const buttomLine = document.querySelector(".line");
   });
 })();
 
-chooseDomla.addEventListener("change", (e) => {
-  chooseSurah.innerHTML = `<option selected disabled>Surani Tanlang</option>`;
+// function foo(){
+  chooseDomla.addEventListener("change", (e) => {
+    chooseSurah.innerHTML = `<option selected disabled>Surani Tanlang</option>`;
 
-  (async () => {
-    const {
-      data: { surahs },
-    } = await customFetch(`${API_URL}/quran/${e.target.value}`);
-    let SelectedSurahIdx = 0;
-    surahs?.forEach((sura) => {
-      const { number, englishName } = sura;
-      chooseSurah.appendChild(
-        createOption({ value: number, textContent: englishName })
-      );
-    });
-
-    chooseSurah.addEventListener("change", (e) => {
-      const { value } = e.target;
-      SelectedSurahIdx = value;
-      chooseAyah.innerHTML = ` <option selected disabled>Oyatni Tanlang</option>`;
-      surahs[value]?.ayahs.forEach((_, idx) => {
-        chooseAyah.appendChild(
-          createOption({ value: idx, textContent: `${idx + 1}` })
+    (async () => {
+      const {
+        data: { surahs },
+      } = await customFetch(`${API_URL}/quran/${e.target.value}`);
+      let SelectedSurahIdx = 0;
+      surahs?.forEach((sura) => {
+        const { number, englishName } = sura;
+        chooseSurah.appendChild(
+          createOption({ value: number, textContent: englishName })
         );
       });
-    });
+      nextBtn.addEventListener("click", () => {
+        chooseDomla.style.display = "none";
+        chooseSurah.style.display = "block";
+      });
 
-    chooseAyah.addEventListener("change", (e) => {
-      const { value } = e.target;
-      const SelectedAyah = surahs[SelectedSurahIdx]?.ayahs?.[value];
-      audio.src = SelectedAyah.audio;
-      oyatText.textContent = SelectedAyah.text;
-    });
-  })();
-});
+      chooseSurah.addEventListener("change", (e) => {
+        const { value } = e.target;
+        SelectedSurahIdx = value;
+        chooseAyah.innerHTML = ` <option selected disabled>Oyatni Tanlang</option>`;
+        surahs[value]?.ayahs.forEach((_, idx) => {
+          chooseAyah.appendChild(
+            createOption({ value: idx, textContent: `${idx + 1}` })
+          );
+        });
+
+        nextBtn.addEventListener("click", () => {
+          chooseSurah.style.display = "none";
+          chooseAyah.style.display = "block";
+        });
+      });
+
+      chooseAyah.addEventListener("change", (e) => {
+        const { value } = e.target;
+        const SelectedAyah = surahs[SelectedSurahIdx]?.ayahs?.[value];
+        audio.src = SelectedAyah.audio;
+        oyatText.textContent = SelectedAyah.text;
+
+        // backAyah.style.display = "block";
+        oyatText.style.display = "block";
+        chooseAyah.style.display = "none";
+        audio.style.display = "block";
+        nextBtn.style.display = "none";
+      });
+    })();
+  });
+// }
+// foo()
+
+// backAyah.addEventListener('click',() => {
+//     foo();
+// });
 
 //===============>> Settings Content <<==================//
 

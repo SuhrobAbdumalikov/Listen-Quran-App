@@ -14,6 +14,9 @@
 .container .quranAppBox {
   background-color: #fff;
   border-radius: 7px;
+  background: url("../../images/images_light.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .container .quranAppBox .tabBtnBox {
   background-color: #02823B;
@@ -23,16 +26,22 @@
   justify-content: center;
   justify-content: space-around;
   position: relative;
-  width: 500px;
+  width: 450px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 .container .quranAppBox .tabBtnBox .tab_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
+  letter-spacing: 1px;
   color: white;
   padding: 5px;
   transition: all 0.3s ease-in-out;
@@ -41,24 +50,44 @@
   transform: scale(1.2);
 }
 .container .quranAppBox .tabBtnBox .line {
-  width: 49px;
+  width: 43px;
   height: 7px;
-  background-color: white;
+  background-color: #fff;
   position: absolute;
   bottom: 0;
-  left: 57px;
+  left: 54px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   transition: all 0.3s ease-in-out;
 }
 .container .quranAppBox .contentBox {
   padding: 20px 30px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
 }
 .container .quranAppBox .contentBox .content_item {
   display: none;
+  animation: moving 0.5s ease;
 }
 .container .quranAppBox .contentBox .content_item.active {
   display: block;
+}
+@keyframes moving {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.container .quranAppBox .contentBox .content_item .currentTime {
+  background-color: #02823B;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
 }
 .container .quranAppBox .contentBox .content_item .listenQuran {
   display: flex;
@@ -66,6 +95,91 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding-top: 100px;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran select {
+  width: 250px;
+  height: 50px;
+  background-color: #02823B;
+  color: white;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 25px;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran select::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  color: white;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran select::-webkit-scrollbar-track {
+  border: rgb(180, 180, 180);
+  background-color: white;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran select::-webkit-scrollbar-thumb {
+  background-color: green;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran #surah {
+  display: none;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran #ayah {
+  display: none;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran button {
+  border: none;
+  outline: none;
+  background-color: #1CC465;
+  color: white;
+  padding: 10px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran button:active {
+  transform: scale(0.95);
+}
+.container .quranAppBox .contentBox .content_item .listenQuran button:hover {
+  opacity: 0.8;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran #backAyah {
+  display: none;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio {
+  display: none;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio::-webkit-media-controls-play-button {
+  background-color: white;
+  border-radius: 20px;
+  color: green;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio::-webkit-media-controls-panel {
+  background-color: green;
+  color: white;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio::-webkit-media-controls-mute-button {
+  background-color: #fff;
+  border-radius: 20px;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio::-webkit-media-controls-current-time-display {
+  color: white;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran audio::-webkit-media-controls-time-remaining-display {
+  color: white;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran #text {
+  text-align: center;
+  width: 390px;
+  font-size: 25px;
+  color: white;
+  margin-top: 50px;
+  background-color: green;
+  padding: 15px 10px;
+  border-radius: 10px;
+  display: none;
 }
 .container .quranAppBox .footerBox {
   display: flex;

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./sass/style/style.css" />
     <title>Listen Quran App</title>
     <style>
-      h1 {
+      h4 {
         color: greenyellow;
       }
     </style>
@@ -20,18 +20,25 @@
     <div class="container">
       <div class="quranAppBox">
         <div class="tabBtnBox">
-          <button class="tab_btn">Main</button>
-          <button class="tab_btn active">Listen Qur'an</button>
-          <button class="tab_btn">Settings</button>
+          <button class="tab_btn active">
+            <i class="fa-solid fa-house"></i>Main
+          </button>
+          <button class="tab_btn">
+            <i class="fa-solid fa-book-quran"></i>Listen Qur'an
+          </button>
+          <button class="tab_btn">
+            <i class="fa-solid fa-gear"></i>Settings
+          </button>
           <div class="line"></div>
         </div>
         <div class="contentBox">
-          <div class="content_item">
+          <div class="content_item active">
             <!-- Main Contents started-->
-            <h2>Hello world form Main Content</h2>
+            <!-- <h1>Welcome to ListenQuran!</h1><br/> -->
+            <h2 class="currentTime"></h2>
             <!-- Main Contents ended-->
           </div>
-          <div class="content_item active">
+          <div class="content_item">
             <!-- Listen Qur'on Content started-->
             <div class="listenQuran">
               <select name="" id="domla">
@@ -44,6 +51,7 @@
                 <option selected disabled>Oyatni Tanlang</option>
               </select>
               <button id="nextBtn">Next</button>
+              <!-- <button id="backAyah">Back To Ayat</button> -->
               <audio src="" controls></audio>
               <p id="text"></p>
             </div>

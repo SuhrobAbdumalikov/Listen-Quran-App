@@ -23,6 +23,7 @@ const shiorText = document.querySelector("fieldset");
 const toggleBtn = document.querySelector(".togglebtn");
 const Info = document.querySelector(".Info");
 const aboutAppPopSection = document.querySelector(".aboutAppPopSection");
+const loader = document.querySelector("#loader");
 
 //===========>========> Listen Qur'on Content <<=================//
 (async () => {
@@ -51,8 +52,12 @@ chooseDomla.addEventListener("change", (e) => {
       );
     });
     nextBtn.addEventListener("click", () => {
-      chooseDomla.style.display = "none";
-      chooseSurah.style.display = "block";
+      loader.style.display = "flex";
+      setTimeout(() => {
+        chooseDomla.style.display = "none";
+        chooseSurah.style.display = "block";
+        loader.style.display = "none";
+      }, 3000);
     });
 
     chooseSurah.addEventListener("change", (e) => {
@@ -66,8 +71,12 @@ chooseDomla.addEventListener("change", (e) => {
       });
 
       nextBtn.addEventListener("click", () => {
-        chooseSurah.style.display = "none";
-        chooseAyah.style.display = "block";
+        loader.style.display = "flex";
+        setTimeout(() => {
+          chooseSurah.style.display = "none";
+          chooseAyah.style.display = "block";
+          loader.style.display = "none";
+        }, 3000);
       });
     });
 
@@ -78,11 +87,15 @@ chooseDomla.addEventListener("change", (e) => {
       oyatText.textContent = SelectedAyah.text;
 
       // backAyah.style.display = "block";
-      oyatText.style.display = "block";
-      chooseAyah.style.display = "none";
-      audio.style.display = "block";
-      nextBtn.style.display = "none";
-      shiorText.style.display = "none";
+      loader.style.display = "flex";
+      setTimeout(() => {
+        oyatText.style.display = "block";
+        chooseAyah.style.display = "none";
+        audio.style.display = "block";
+        nextBtn.style.display = "none";
+        shiorText.style.display = "none";
+        loader.style.display = "none";
+      }, 3000);
     });
   })();
 });
@@ -118,16 +131,13 @@ btnTasbeh.addEventListener("click", () => {
   allCount++;
   clickAudio.play();
   retry0.addEventListener("click", () => {
-    localStorage.clear();
-    // localStorage.removeItem("countBtnNum")
-    // localStorage.removeItem("countAllNum")
-    //   JSON.parse(localStorage.removeItem("countAllNum"));
-    //   JSON.parse();
     count = 0;
     allCount = 0;
     JamiNumbers.textContent = `Jami: ${0}`;
     btnTasbeh.textContent = 0;
     tasbehNum.textContent = `${0}/33`;
+    localStorage.setItem("countBtnNum",0);
+    localStorage.setItem("countAllNum",0);
   });
 
   JamiNumbers.textContent = `Jami: ${allCount}`;

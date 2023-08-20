@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .container {
@@ -24,6 +25,13 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
       rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
       rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    transition: all 0.3s ease-in-out;
+
+    &.dark {
+      background: url("../../images/images_night.jpg") no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
 
     .tabBtnBox {
       background-color: $boxTabColor;
@@ -78,6 +86,8 @@
       height: 500px;
       display: flex;
       justify-content: center;
+      position: relative;
+
       .content_item {
         display: none;
         animation: moving 0.5s ease;
@@ -101,7 +111,7 @@
               background-color: $boxTabColor;
               padding: 10px 15px;
               border-radius: 5px;
-              width: 317px;
+              width: 328px;
               .h2AndP {
                 font-size: 40px;
                 @include d-flex();
@@ -224,6 +234,7 @@
             text-align: center;
             color: white;
             border: none;
+            box-shadow: rgba(255, 255, 255, 0.4) 0px 7px 29px 0px;
             legend {
               background-color: white;
               padding: 5px 20px;
@@ -274,6 +285,110 @@
             display: none;
           }
         }
+
+        .nightBtn {
+          display: flex;
+          align-items: center;
+          gap: 140px;
+          background-color: #fff;
+          padding: 5px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+          p {
+            font-size: 22px;
+          }
+
+          .togglebtn {
+            cursor: pointer;
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background-color: $boxTabColor;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 21px;
+              height: 21px;
+              background-color: #fff;
+              border-radius: 50%;
+              top: 50%;
+              left: 3px;
+              transform: translateY(-50%);
+              transition: all 0.3s ease-in-out;
+            }
+            &.active::before {
+              left: calc(100% - 21px - 3px);
+              background-color: $boxTabColor;
+            }
+            &.active {
+              background-color: white;
+            }
+          }
+
+          &.nightMode {
+            background-color: #1d184e;
+            color: white;
+          }
+        }
+
+        .Info {
+          margin-top: 10px;
+          background-color: #fff;
+          padding: 5px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+          font-size: 22px;
+          cursor: pointer;
+
+          &.nightMode {
+            background-color: #1d184e;
+            color: white;
+          }
+        }
+      }
+
+      .aboutAppPopSection {
+        width: 0%;
+        overflow: hidden;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+        &.dark {
+          background-color: rgba(29, 24, 78, 0.9);
+          color: white;
+        }
+
+        .topText {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          padding: 10px 20px;
+          background-color: $boxTabColor;
+          border-top: 2px solid white;
+          gap: 20px;
+          color: white;
+
+          i {
+            font-size: 23px;
+            cursor: pointer;
+          }
+        }
+
+        p {
+          font-size: 17px;
+          line-height: 25px !important;
+          padding: 10px 30px;
+          text-align: justify;
+          transition: all 0.3s ease-in-out;
+          opacity: 0;
+        }
       }
     }
 
@@ -294,3 +409,4 @@
     }
   }
 }
+// #1D2733

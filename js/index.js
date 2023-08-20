@@ -105,10 +105,13 @@ setInterval(() => {
   const nowTime = new Date();
   currentTime.textContent = `Current Time: ${nowTime.toLocaleTimeString()}`;
 });
+const clickAudio = new Audio();
+clickAudio.src = "../audio/click2.mp3";
+
 btnTasbeh.addEventListener("click", () => {
   count++;
   allCount++;
-
+  clickAudio.play();
   retry0.addEventListener("click", () => {
     allCount = 0;
     JamiNumbers.textContent = `Jami: ${0}`;

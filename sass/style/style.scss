@@ -21,10 +21,6 @@
     background: url("../../images/images_light.jpg") no-repeat;
     background-position: center;
     background-size: cover;
-    // height: 600px;
-    // backdrop-filter: blur(10px);
-    // filter: blur(8px);
-    // -webkit-filter: blur(8px);
 
     .tabBtnBox {
       background-color: $boxTabColor;
@@ -86,65 +82,66 @@
           display: block;
         }
 
-        .tasbehSection{
-            @include d-column();
-            // background-color: yellow;
+        .tasbehSection {
+          @include d-column();
+          // background-color: yellow;
+          margin-top: 50px;
+
+          .together {
+            gap: 7px;
+            .textContent {
+              color: white;
+              display: flex;
+              flex-direction: column;
+              align-items: start;
+              justify-content: center;
+              background-color: $boxTabColor;
+              padding: 10px 15px;
+              border-radius: 5px;
+              width: 317px;
+              .h2AndP {
+                font-size: 40px;
+                @include d-flex();
+                gap: 20px;
+                p {
+                  border-left: 3px solid white;
+                  padding: 0 15px;
+                }
+              }
+
+              .jamiAndRetry0 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 200px;
+                button {
+                  background-color: white;
+                  color: $boxTabColor;
+                  border-radius: 50%;
+                  width: 25px;
+                  height: 25px;
+                  border: none;
+                  outline: none;
+                  @include d-flex();
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+
+          .btnTasbeh {
+            background-color: $boxTabColor;
+            color: white;
+            width: 140px;
+            height: 140px;
+            @include d-flex();
+            font-size: 50px;
+            border-radius: 50%;
             margin-top: 50px;
-
-            .together{
-                @include d-flex();
-                gap: 7px;
-                .textContent{
-                    color:white;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: start;
-                    justify-content: center;
-                    background-color: $boxTabColor;
-                    padding: 15px 25px;
-                    border-radius: 5px;
-                    .h2AndP{
-                        font-size: 40px;
-                        @include d-flex();
-                        gap:20px;
-                        p{
-                            border-left:3px solid white;
-                            padding: 0 15px;
-                        }
-                    }
-                }
-
-                .chooseAmal{
-                    @include d-column();
-                    gap:5px;
-                    button{
-                        width: 35px;
-                        height: 35px;
-                        font-size: 16px;
-                        border-radius: 50%;
-                        border: none;
-                        outline: none;
-                        background-color: $boxTabColor;
-                        color:white;
-                        cursor: pointer;
-                        @include btn();
-                    }
-                }
-            }
-
-            .btnTasbeh{
-                background-color: $boxTabColor;
-                color:white;
-                width: 140px;
-                height: 140px;
-                @include d-flex();
-                font-size: 50px;
-                border-radius: 50%;
-                margin-top:50px;
-                border: 4px solid white;
-                outline: 5px solid $boxTabColor;
-                cursor: pointer;
-            }
+            border: 4px solid white;
+            outline: 5px solid $boxTabColor;
+            cursor: pointer;
+          }
         }
 
         @keyframes moving {

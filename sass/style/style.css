@@ -81,9 +81,6 @@
   margin-top: 50px;
 }
 .container .quranAppBox .contentBox .content_item .tasbehSection .together {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 7px;
 }
 .container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent {
@@ -93,8 +90,9 @@
   align-items: start;
   justify-content: center;
   background-color: #02823B;
-  padding: 15px 25px;
+  padding: 10px 15px;
   border-radius: 5px;
+  width: 317px;
 }
 .container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent .h2AndP {
   font-size: 40px;
@@ -107,30 +105,24 @@
   border-left: 3px solid white;
   padding: 0 15px;
 }
-.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal {
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent .jamiAndRetry0 {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 5px;
+  justify-content: space-between;
+  gap: 200px;
 }
-.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button {
-  width: 35px;
-  height: 35px;
-  font-size: 16px;
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent .jamiAndRetry0 button {
+  background-color: white;
+  color: #02823B;
   border-radius: 50%;
+  width: 25px;
+  height: 25px;
   border: none;
   outline: none;
-  background-color: #02823B;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-}
-.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button:active {
-  transform: scale(0.95);
-}
-.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button:hover {
-  opacity: 0.8;
 }
 .container .quranAppBox .contentBox .content_item .tasbehSection .btnTasbeh {
   background-color: #02823B;

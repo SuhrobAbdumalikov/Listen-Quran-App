@@ -73,6 +73,80 @@
 .container .quranAppBox .contentBox .content_item.active {
   display: block;
 }
+.container .quranAppBox .contentBox .content_item .tasbehSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background-color: #02823B;
+  padding: 15px 25px;
+  border-radius: 5px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent .h2AndP {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .textContent .h2AndP p {
+  border-left: 3px solid white;
+  padding: 0 15px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button {
+  width: 35px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #02823B;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button:active {
+  transform: scale(0.95);
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .together .chooseAmal button:hover {
+  opacity: 0.8;
+}
+.container .quranAppBox .contentBox .content_item .tasbehSection .btnTasbeh {
+  background-color: #02823B;
+  color: white;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  border-radius: 50%;
+  margin-top: 50px;
+  border: 4px solid white;
+  outline: 5px solid #02823B;
+  cursor: pointer;
+}
 @keyframes moving {
   from {
     transform: translateX(50px);

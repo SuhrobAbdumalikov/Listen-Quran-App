@@ -161,7 +161,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .container .quranAppBox .contentBox .content_item .listenQuran select {
   width: 250px;
@@ -210,6 +210,26 @@
 }
 .container .quranAppBox .contentBox .content_item .listenQuran button:hover {
   opacity: 0.8;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran fieldset {
+  background-color: #02823B;
+  margin-top: 60px;
+  width: 250px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  border: none;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran fieldset legend {
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: #02823B;
+  border: 2px solid #02823B;
+}
+.container .quranAppBox .contentBox .content_item .listenQuran fieldset .shiorText {
+  font-size: 40px;
 }
 .container .quranAppBox .contentBox .content_item .listenQuran #backAyah {
   display: none;

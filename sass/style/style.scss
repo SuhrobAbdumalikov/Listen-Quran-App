@@ -166,7 +166,7 @@
         .listenQuran {
           @include d-column();
           gap: 20px;
-          padding-top: 100px;
+          padding-top: 50px;
 
           select {
             width: 250px;
@@ -210,6 +210,27 @@
             cursor: pointer;
             font-size: 18px;
             @include btn();
+          }
+
+          fieldset{
+              background-color: $boxTabColor;
+              margin-top: 60px;
+              width: 250px;
+              padding: 10px 20px;
+              border-radius: 5px;
+              text-align: center;
+              color:white;
+              border: none;
+              legend{
+                background-color: white;
+                padding: 5px 20px;
+                border-radius: 20px;
+                color:$boxTabColor;
+                border: 2px solid $boxTabColor;
+              }
+              .shiorText{
+                font-size: 40px;
+              }
           }
           #backAyah {
             display: none;

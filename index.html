@@ -10,15 +10,11 @@
     ></script>
     <link rel="stylesheet" href="./sass/style/style.css" />
     <title>Listen Quran App</title>
-    <style>
-      h4 {
-        color: greenyellow;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
       <div class="quranAppBox">
+        <!-- <<=>> -->
         <div class="tabBtnBox">
           <button class="tab_btn active">
             <i class="fa-solid fa-house"></i>Main
@@ -34,7 +30,6 @@
         <div class="contentBox">
           <div class="content_item active">
             <!-- Main Contents started-->
-            <!-- <h1>Welcome to ListenQuran!</h1><br/> -->
             <h2 class="currentTime"></h2>
             <div class="tasbehSection">
               <div class="together">
@@ -68,6 +63,10 @@
                 <option selected disabled>Oyatni Tanlang</option>
               </select>
               <button id="nextBtn">Next</button>
+              <fieldset>
+                <legend>Don't forget</legend>
+                <p class="shiorText">لا اله الا الله محمد رسول الله</p>
+              </fieldset>
               <!-- <button id="backAyah">Back To Ayat</button> -->
               <audio src="" controls></audio>
               <p id="text"></p>
@@ -87,6 +86,7 @@
             >Privacy Policy</a
           >
         </div>
+        <!-- <<=>> -->
       </div>
     </div>
     <script src="./js/index.js" type="module"></script>

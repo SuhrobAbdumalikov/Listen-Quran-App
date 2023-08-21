@@ -123,21 +123,20 @@ setInterval(() => {
 });
 const clickAudio = new Audio();
 clickAudio.src = "../audio/click2.mp3";
-let count = 0;
-let allCount = 0;
+let count = localStorage.getItem("countBtnNum");
+let allCount = localStorage.getItem("countBtnNum");
 
 btnTasbeh.addEventListener("click", () => {
   count++;
   allCount++;
   clickAudio.play();
   retry0.addEventListener("click", () => {
-    count = 0;
-    allCount = 0;
+    count = localStorage.getItem("countBtnNum");
+    allCount = localStorage.getItem("countBtnNum");
     JamiNumbers.textContent = `Jami: ${0}`;
     btnTasbeh.textContent = 0;
     tasbehNum.textContent = `${0}/33`;
-    localStorage.setItem("countBtnNum",0);
-    localStorage.setItem("countAllNum",0);
+    localStorage.clear();
   });
 
   JamiNumbers.textContent = `Jami: ${allCount}`;
